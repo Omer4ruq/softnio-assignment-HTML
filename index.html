@@ -1,9 +1,74 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Shopping Page</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="shopping-container">
+      <div class="product-image">
+        <img id="product-img" src="images/green.jpg" alt="Product Image" />
+      </div>
+      <div class="product-details">
+        <h1 id="product-title">Smart Watch</h1>
+        <p id="product-description">
+          A sleek and stylish smartwatch with multiple features.
+        </p>
+        <div class="pricing">
+          <span class="regular-price"
+            >$<span id="regular-price">150</span></span
+          >
+          <span class="discount-price"
+            >$<span id="discount-price">120</span></span
+          >
+        </div>
+        <div class="color-options">
+          <h3>Band Color:</h3>
+          <label
+            ><input type="radio" name="band-color" value="black" checked />
+            Black</label
+          >
+          <label
+            ><input type="radio" name="band-color" value="blue" /> Blue</label
+          >
+          <label
+            ><input type="radio" name="band-color" value="red" /> Red</label
+          >
+        </div>
+        <div class="size-options">
+          <h3>Wrist Size:</h3>
+          <button class="size-box" data-size="S">S</button>
+          <button class="size-box" data-size="M">M</button>
+          <button class="size-box" data-size="L">L</button>
+        </div>
+        <div class="quantity-selector">
+          <h3>Quantity:</h3>
+          <button id="decrease-btn">-</button>
+          <span id="quantity">1</span>
+          <button id="increase-btn">+</button>
+        </div>
+        <div class="actions">
+          <button id="add-to-cart">Add to Cart</button>
+          <button id="favorite">❤ Favorite</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="checkout-btn" class="hidden">
+      Checkout (<span id="cart-count">0</span>)
+    </button>
+
+    <div id="cart-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
