@@ -10,17 +10,20 @@ body {
   display: flex;
   padding: 20px;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-image img {
-  width: 300px;
-  height: auto;
+  width: 630;
+  height: 721px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .product-details {
-  max-width: 600px;
+  max-width: 630px;
+  max-height: 539px;
 }
 
 .product-details h1 {
@@ -52,7 +55,9 @@ body {
   margin-right: 15px;
   cursor: pointer;
 }
-
+.color-options span {
+  background: #0056b3;
+}
 .size-options {
   margin: 20px 0;
 }
@@ -69,6 +74,12 @@ body {
 
 .size-options .size-box:hover {
   background: #eaeaea;
+}
+
+.last-portion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .quantity-selector {
@@ -101,6 +112,11 @@ body {
 
 .actions button:hover {
   background: #0056b3;
+}
+
+.favorite {
+  border: none;
+  background: white;
 }
 
 #checkout-btn {
@@ -164,4 +180,29 @@ body {
   background: #dc3545;
   color: white;
   cursor: pointer;
+}
+
+.color-options label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+}
+
+.color-options input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.color-options span.radio-display {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  margin-right: 5px;
 }

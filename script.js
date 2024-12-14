@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
   const productImage = document.getElementById("product-img");
   const bandColorRadios = document.querySelectorAll("input[name='band-color']");
@@ -15,8 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cart = [];
 
-  // Change product image based on band color
+  // Apply color to radio buttons dynamically
   bandColorRadios.forEach((radio) => {
+    const label = radio.parentElement;
+    const colorName = radio.color;
+    const span = document.createElement("span");
+    span.classList.add("radio-display");
+    // span.style.backgroundColor = colorName; // Set the background color
+    label.insertBefore(span, label.firstChild);
+
     radio.addEventListener("change", () => {
       productImage.src = `images/${radio.value}.jpg`;
     });
@@ -31,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Adjust quantity
-  let quantity = 1;
+  let quantity = 0;
 
   decreaseBtn.addEventListener("click", () => {
     if (quantity > 1) {

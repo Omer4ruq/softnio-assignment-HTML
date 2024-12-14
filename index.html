@@ -26,17 +26,42 @@
           >
         </div>
         <div class="color-options">
-          <h3>Band Color:</h3>
+          <h3>Band Color</h3>
           <label
-            ><input type="radio" name="band-color" value="black" checked />
-            Black</label
-          >
+            ><input
+              type="radio"
+              class="color-options-green"
+              name="band-color"
+              color="#816bff"
+              value="green"
+              checked
+              style="background: blue"
+            />
+          </label>
           <label
-            ><input type="radio" name="band-color" value="blue" /> Blue</label
-          >
+            ><input
+              type="radio"
+              name="band-color"
+              color="#1fcec9"
+              value="blue"
+            />
+          </label>
           <label
-            ><input type="radio" name="band-color" value="red" /> Red</label
-          >
+            ><input
+              type="radio"
+              name="band-color"
+              color="#6576ff"
+              value="cyan"
+            />
+          </label>
+          <label
+            ><input
+              type="radio"
+              name="band-color"
+              color="black"
+              value="black"
+            />
+          </label>
         </div>
         <div class="size-options">
           <h3>Wrist Size:</h3>
@@ -44,16 +69,17 @@
           <button class="size-box" data-size="M">M</button>
           <button class="size-box" data-size="L">L</button>
         </div>
-        <div class="quantity-selector">
-          <h3>Quantity:</h3>
-          <button id="decrease-btn">-</button>
-          <span id="quantity">1</span>
-          <button id="increase-btn">+</button>
-        </div>
-        <div class="actions">
-          <button id="add-to-cart">Add to Cart</button>
-          <button id="favorite">❤ Favorite</button>
-        </div>
+        <data class="last-portion" value="">
+          <div class="quantity-selector">
+            <button id="decrease-btn">-</button>
+            <span id="quantity">0</span>
+            <button id="increase-btn">+</button>
+          </div>
+          <div class="actions">
+            <button id="add-to-cart">Add to Cart</button>
+          </div>
+          <button id="favorite" class="favorite">❤</button>
+        </data>
       </div>
     </div>
 
