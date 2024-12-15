@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productImage = document.getElementById("product-img");
-  const bandColorRadios = document.querySelectorAll("input[name='color']");
+  const bandColorRadios = document.querySelectorAll("input[name='band-color']");
   const sizeButtons = document.querySelectorAll(".size-box");
   const quantityDisplay = document.getElementById("quantity");
   const decreaseBtn = document.getElementById("decrease-btn");
