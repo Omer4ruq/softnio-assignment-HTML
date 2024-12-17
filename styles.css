@@ -2,8 +2,8 @@
 /* Center the shopping container in the middle of the page */
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: auto;
   box-sizing: border-box;
   height: 100vh; /* Full viewport height */
   display: flex;
@@ -58,7 +58,7 @@ h1 {
 /* Responsive Product Image */
 .product-image img {
   width: 100%; /* Adjusts dynamically */
-  max-width: 630px;
+  max-width: auto;
   height: auto; /* Maintains aspect ratio */
   border-radius: 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -66,7 +66,7 @@ h1 {
 
 /* Product Details */
 .product-details {
-  max-width: 630px;
+  max-width: auto;
   width: 100%; /* Fully responsive */
 }
 
@@ -77,7 +77,7 @@ h1 {
 
 .product-details p {
   margin-bottom: 20px;
-  color: #555;
+  color: #8091a7;
 }
 
 .pricing {
@@ -86,12 +86,12 @@ h1 {
 
 .pricing .regular-price {
   text-decoration: line-through;
-  color: #888;
+  color: #8091a7;
   margin-right: 10px;
 }
 
 .pricing .discount-price {
-  color: #e63946;
+  color: #6576ff;
   font-weight: bold;
 }
 
@@ -302,4 +302,42 @@ h1 {
     padding: 8px 15px;
     font-size: 14px;
   }
+}
+
+/* Rating stars */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-bottom: 20px;
+}
+
+.stars {
+  display: inline-flex;
+}
+
+.star {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.star.full {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gold"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+}
+
+.star.half {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="gold"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27V2z"/><path d="M12 2l2.81 6.63 7.19.61-5.46 4.73 1.64 7.03L12 17.27V2z" fill="lightgray"/></svg>');
+}
+
+.star.empty {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="lightgray"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>');
+}
+
+.rating-number {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #8091a7;
 }
