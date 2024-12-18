@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productImage = document.getElementById("product-img");
+  const productTitle = document.getElementById("product-title").textContent;
   const bandColorRadios = document.querySelectorAll("input[name='band-color']");
   const sizeButtons = document.querySelectorAll(".size-box");
   const quantityDisplay = document.getElementById("quantity");
@@ -58,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedSize =
       document.querySelector(".size-box.selected")?.dataset.size ||
       "Not Selected";
+    const selectedPrice =
+      document.querySelector(".size-box.selected")?.dataset.price ||
+      "Not Selected";
     const regularPrice = document.getElementById("regular-price").textContent;
     const discountPrice = document.getElementById("discount-price").textContent;
 
@@ -65,8 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
       color: selectedColor,
       size: selectedSize,
       quantity,
-      price: discountPrice,
+      price: selectedPrice,
       image: productImage.src,
+      productTitle: productTitle,
     };
 
     cart.push(cartItem);
@@ -102,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <thead>
           <tr>
             <th>Image</th>
+            <th></th>
             <th>Color</th>
             <th>Size</th>
             <th>Quantity</th>
@@ -114,7 +120,9 @@ document.addEventListener("DOMContentLoaded", () => {
               (item) => `
             <tr>
               <td><img src="${item.image}" alt="Product Image" width="50"></td>
+              <td>${item.productTitle}</td>
               <td>${item.color}</td>
+              
               <td>${item.size}</td>
               <td>${item.quantity}</td>
               <td>$${item.price}</td>

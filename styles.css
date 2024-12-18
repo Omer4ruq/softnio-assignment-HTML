@@ -113,6 +113,31 @@ h3 {
   font-weight: bold;
 }
 
+.type-model {
+  display: flex;
+  gap: 43px;
+}
+
+.type-model h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400; /* For bold weight */
+  font-size: 14px; /* Default font size for large screens */
+  margin-bottom: -20px; /* Space below heading */
+  line-height: 23.1px; /* Improve line spacing */
+  text-align: left; /* Align to the left by default */
+
+  color: #8091a7;
+}
+
+.type-model h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700; /* For bold weight */
+  font-size: 16px; /* Default font size for large screens */
+  margin-bottom: 5px; /* Space below heading */
+  line-height: 23px; /* Improve line spacing */
+  text-align: left; /* Align to the left by default */
+  color: #364a63;
+}
 .color-options {
   margin-bottom: 20px;
   display: flex;
@@ -247,16 +272,24 @@ table {
   border-collapse: collapse;
 }
 
-th,
+tr {
+}
 td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: center;
 }
 
 th {
-  background-color: #f4f4f4;
-  font-weight: bold;
+  color: #8091a7;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23.1px;
+  align-items: center;
+}
+
+tbody {
+  border-bottom: 0.5px solid;
 }
 
 /* Last Portion Alignment */
