@@ -102,6 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render cart items in modal as a table
   function renderCartTable() {
+    // Calculate total quantity and total amount
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalAmount = cart.reduce(
+      (sum, item) => sum + item.quantity * parseFloat(item.price || 0),
+      0
+    );
+
+    // Generate the table content
     cartItems.innerHTML = `
       <table id="cart-table">
         <thead>
@@ -113,24 +121,36 @@ document.addEventListener("DOMContentLoaded", () => {
             <th>Quantity</th>
             <th>Price</th>
           </tr>
+          
         </thead>
-        <tbody>
+        <tbody id="cart-items">
           ${cart
             .map(
               (item) => `
             <tr>
-              <td><img src="${item.image}" alt="Product Image" width="50"></td>
-              <td>${item.productTitle}</td>
+              <td><img src="${item.image}" alt="Product Image" width="50" id="cart-img"></td>
+              <td id="cart-productTitle">${item.productTitle}</td>
               <td>${item.color}</td>
-              
-              <td>${item.size}</td>
-              <td>${item.quantity}</td>
-              <td>$${item.price}</td>
+              <td><strong>${item.size}</strong></td>
+              <td><strong>${item.quantity}</strong></td>
+              <td><strong>$${item.price}</strong></td>
             </tr>
+            
           `
             )
             .join("")}
         </tbody>
+        <tfoot>
+          <tr>
+            <td ><strong>Total</strong></td>
+            <td ><strong></strong></td>
+            <td ><strong></strong></td>
+            <td ><strong></strong></td>
+            <td > <strong >${totalQuantity}</strong></td>
+            <td ><strong>$${totalAmount.toFixed(2)}</strong></td>
+          </tr>
+        
+        </tfoot>
       </table>
     `;
   }

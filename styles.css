@@ -258,7 +258,7 @@ h3 {
 /* Cart Modal Styles */
 #cart-modal {
   margin-top: 20px;
-  border: 1px solid #ddd;
+
   padding: 10px;
   border-radius: 5px;
 }
@@ -277,6 +277,7 @@ tr {
 td {
   padding: 8px;
   text-align: center;
+  width: 100px;
 }
 
 th {
@@ -289,7 +290,7 @@ th {
 }
 
 tbody {
-  border-bottom: 0.5px solid;
+  width: 100px;
 }
 
 /* Last Portion Alignment */
@@ -310,12 +311,20 @@ tbody {
   width: 30px;
   height: 30px;
   text-align: center;
-  background: #f1f1f1;
+  background: #dbdfea;
   border: 1px solid #ddd;
-  border-radius: 4px;
+
   cursor: pointer;
 }
+.quantity-selector span {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: #dbdfea;
+  border: 1px solid #ddd;
 
+  cursor: pointer;
+}
 /* Action Buttons */
 .actions button {
   margin-right: 10px;
@@ -378,7 +387,7 @@ tbody {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  width: 400px;
+  width: 800px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
@@ -392,6 +401,7 @@ tbody {
 .modal-content ul li {
   margin-bottom: 10px;
   text-align: left;
+  border-bottom: 1px solid;
 }
 
 #close-modal {
@@ -402,7 +412,16 @@ tbody {
   color: white;
   cursor: pointer;
 }
+#cart-items td {
+  border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust 0.3 for opacity */
+}
 
+#cart-img {
+  border-radius: 4px;
+}
+#cart-productTitle {
+  width: 200px;
+}
 /* Responsive Design: Media Queries */
 @media (max-width: 768px) {
   .product-image img {
@@ -484,4 +503,12 @@ tbody {
   font-family: "Roboto", sans-serif;
   font-weight: normal;
   color: #8091a7;
+}
+
+#cart-items {
+  font-size: 14px;
+}
+
+#cart-table th {
+  max-width: 500px;
 }
