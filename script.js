@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const colorName = radio.color;
     const span = document.createElement("span");
     span.classList.add("radio-display");
-    // span.style.backgroundColor = colorName; // Set the background color
     label.insertBefore(span, label.firstChild);
 
     radio.addEventListener("change", () => {
@@ -37,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Adjust quantity
-  let quantity = 0;
+  let quantity = 1; // Start at 1 instead of 0
 
   decreaseBtn.addEventListener("click", () => {
     if (quantity > 1) {
@@ -53,9 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add to cart functionality
   addToCartBtn.addEventListener("click", () => {
-    const selectedColor = document.querySelector(
-      "input[name='band-color']:checked"
-    ).value;
+    const selectedColor =
+      document.querySelector("input[name='band-color']:checked")?.value ||
+      "Not Selected";
     const selectedSize =
       document.querySelector(".size-box.selected")?.dataset.size ||
       "Not Selected";
@@ -88,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show cart modal
   checkoutBtn.addEventListener("click", () => {
     cartModal.classList.remove("hidden");
-    renderCartItems();
+    renderCartTable(); // Updated to render table
   });
 
   // Close modal
@@ -96,19 +95,35 @@ document.addEventListener("DOMContentLoaded", () => {
     cartModal.classList.add("hidden");
   });
 
-  // Render cart items in modal
-  function renderCartItems() {
-    cartItems.innerHTML = "";
-    cart.forEach((item, index) => {
-      const li = document.createElement("li");
-      li.innerHTML = `
-                <img src="${item.image}" alt="Product Image" width="50">
-                <span>Color: ${item.color}</span>
-                <span>Size: ${item.size}</span>
-                <span>Quantity: ${item.quantity}</span>
-                <span>Price: $${item.price}</span>
-            `;
-      cartItems.appendChild(li);
-    });
+  // Render cart items in modal as a table
+  function renderCartTable() {
+    cartItems.innerHTML = `
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Color</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${cart
+            .map(
+              (item) => `
+            <tr>
+              <td><img src="${item.image}" alt="Product Image" width="50"></td>
+              <td>${item.color}</td>
+              <td>${item.size}</td>
+              <td>${item.quantity}</td>
+              <td>$${item.price}</td>
+            </tr>
+          `
+            )
+            .join("")}
+        </tbody>
+      </table>
+    `;
   }
 });
