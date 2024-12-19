@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cart = [];
 
-  // Apply color to radio buttons dynamically
   bandColorRadios.forEach((radio) => {
     const label = radio.parentElement;
     const colorName = radio.color;
@@ -28,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Highlight selected size
   sizeButtons.forEach((button) => {
     button.addEventListener("click", () => {
       sizeButtons.forEach((btn) => btn.classList.remove("selected"));
@@ -36,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Adjust quantity
   let quantity = 0;
 
   decreaseBtn.addEventListener("click", () => {
@@ -51,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     quantityDisplay.textContent = quantity;
   });
 
-  // Add to cart functionality
   addToCartBtn.addEventListener("click", () => {
     const selectedColor =
       document.querySelector("input[name='band-color']:checked")?.value ||
@@ -79,20 +75,17 @@ document.addEventListener("DOMContentLoaded", () => {
     showCheckoutButton();
   });
 
-  // Update cart count
   function updateCartCount() {
     cartCount.textContent = cart.length;
   }
 
-  // Show checkout button
   function showCheckoutButton() {
     checkoutBtn.classList.remove("hidden");
   }
 
-  // Show cart modal
   checkoutBtn.addEventListener("click", () => {
     cartModal.classList.remove("hidden");
-    renderCartTable(); // Updated to render table
+    renderCartTable();
   });
 
   // Close modal
@@ -100,16 +93,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cartModal.classList.add("hidden");
   });
 
-  // Render cart items in modal as a table
   function renderCartTable() {
-    // Calculate total quantity and total amount
     const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalAmount = cart.reduce(
       (sum, item) => sum + item.quantity * parseFloat(item.price || 0),
       0
     );
 
-    // Generate the table content
     cartItems.innerHTML = `
       <table id="cart-table">
         <thead>
