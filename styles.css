@@ -175,27 +175,29 @@ h3 {
 
 /* Size Options */
 .size-options {
-  margin: 20px 0;
+  margin: 10px 0;
   display: flex;
 }
 
 .size-options .size-box {
   border: 1px solid #ddd;
   border-radius: 0;
-  padding: 10px 15px;
+  height: 30px;
+  width: 60px;
   margin-right: 10px;
   cursor: pointer;
   background: #f9f9f9;
   transition: background 0.3s;
-  font-weight: bold;
+  font-weight: 700;
   font-size: small;
   font-family: roboto;
 }
 
 .size-options .size-box span {
   font-weight: lighter;
-  font-size: smaller;
+  font-size: 400;
   opacity: 50%;
+  padding-left: 4px;
 }
 
 .size-options .size-box:hover {
@@ -301,28 +303,29 @@ tbody {
   margin: 20px 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
 }
 
 .quantity-selector button {
   width: 30px;
   height: 30px;
   text-align: center;
-  background: #dbdfea;
-  border: 1px solid #ddd;
-
+  border: none;
   cursor: pointer;
 }
 .quantity-selector span {
   width: 30px;
   height: 30px;
   text-align: center;
-  background: #dbdfea;
-  border: 1px solid #ddd;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 .actions button {
   margin-right: 10px;
   padding: 10px 20px;
@@ -351,13 +354,22 @@ tbody {
   transform: translateX(-50%);
   padding: 10px 20px;
   background: #ffbb5a;
-  color: white;
+  color: #364a63;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 4px;
 }
-
+#checkout-btn span {
+  background-color: white;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
 #checkout-btn.hidden {
   display: none;
 }
@@ -434,7 +446,7 @@ tbody {
   cursor: pointer;
 }
 #cart-items td {
-  border-top: 1px solid rgba(0, 0, 0, 0.2); /* Adjust 0.3 for opacity */
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 #cart-img {
