@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Adjust quantity
-  let quantity = 1; // Start at 1 instead of 0
+  let quantity = 0;
 
   decreaseBtn.addEventListener("click", () => {
     if (quantity > 1) {

@@ -1,46 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-/* Center the shopping container in the middle of the page */
+
 body {
   font-family: "Roboto", sans-serif;
   margin: 20px;
   padding: 20px;
   box-sizing: border-box;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  background-color: #f9f9f9; /* Optional background color */
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
 }
 
 h1 {
   font-family: "Roboto", sans-serif;
-  font-weight: 700; /* For bold weight */
-  font-size: 40px; /* Default font size for large screens */
-  margin-bottom: 15px; /* Space below heading */
-  line-height: 44px; /* Improve line spacing */
-  text-align: left; /* Align to the left by default */
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 15px;
+  line-height: 44px;
+  text-align: left;
   color: #364a63;
 }
 h3 {
   font-family: "Roboto", sans-serif;
-  font-weight: 700; /* For bold weight */
-  font-size: 18px; /* Default font size for large screens */
+  font-weight: 700;
+  font-size: 18px;
   margin-bottom: 10px;
-  line-height: 20px; /* Improve line spacing */
-  text-align: left; /* Align to the left by default */
+  line-height: 20px;
+  text-align: left;
   color: #364a63;
 }
 
 @media (max-width: 768px) {
   h1 {
-    text-align: center; /* Center align text on smaller devices */
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 18px; /* Further reduce font size for mobile devices */
-    margin-bottom: 10px; /* Adjust spacing */
+    font-size: 18px;
+    margin-bottom: 10px;
   }
 }
 .shopping-container {
@@ -49,12 +49,10 @@ h3 {
   align-items: center;
   gap: 20px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
   border-radius: 8px;
-  background-color: #ffffff; /* Optional white background */
 }
 
-/* Container for product display */
 /* .shopping-container {
   display: flex;
   justify-content: center;
@@ -63,7 +61,6 @@ h3 {
   padding: 20px;
 } */
 
-/* Responsive Product Image */
 .product-image img {
   width: 630px;
   max-width: auto;
@@ -120,22 +117,22 @@ h3 {
 
 .type-model h2 {
   font-family: "Roboto", sans-serif;
-  font-weight: 400; /* For bold weight */
-  font-size: 14px; /* Default font size for large screens */
-  margin-bottom: -20px; /* Space below heading */
-  line-height: 23.1px; /* Improve line spacing */
-  text-align: left; /* Align to the left by default */
+  font-weight: 400;
+  font-size: 14px;
+  margin-bottom: -20px;
+  line-height: 23.1px;
+  text-align: left;
 
   color: #8091a7;
 }
 
 .type-model h4 {
   font-family: "Roboto", sans-serif;
-  font-weight: 700; /* For bold weight */
-  font-size: 16px; /* Default font size for large screens */
-  margin-bottom: 5px; /* Space below heading */
-  line-height: 23px; /* Improve line spacing */
-  text-align: left; /* Align to the left by default */
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 23px;
+  text-align: left;
   color: #364a63;
 }
 .color-options {
@@ -228,30 +225,30 @@ h3 {
 
 @media (max-width: 768px) {
   .shopping-container {
-    flex-direction: column; /* Stack image and details vertically */
-    gap: 15px; /* Adjust spacing between sections */
-    padding: 10px; /* Adjust padding for smaller screens */
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
     padding-top: 50px;
   }
 
   .product-image img {
-    width: 100%; /* Full width for image */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure it doesn’t overflow */
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
 
   .product-details {
-    text-align: center; /* Center align text for better mobile UX */
-    padding: 0 10px; /* Add padding for readability */
+    text-align: center;
+    padding: 0 10px;
   }
 
   .product-details h1 {
-    font-size: 20px; /* Slightly smaller heading for small screens */
+    font-size: 20px;
   }
 
   .pricing .regular-price,
   .pricing .discount-price {
-    font-size: 16px; /* Adjust font sizes */
+    font-size: 16px;
   }
 }
 
@@ -325,7 +322,7 @@ tbody {
 
   cursor: pointer;
 }
-/* Action Buttons */
+
 .actions button {
   margin-right: 10px;
   padding: 10px 20px;
@@ -351,7 +348,7 @@ tbody {
   position: fixed;
   bottom: 20px;
   left: 50%;
-  transform: translateX(-50%); /* Center horizontally */
+  transform: translateX(-50%);
   padding: 10px 20px;
   background: #ffbb5a;
   color: white;
@@ -392,6 +389,14 @@ tbody {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+.model-title {
+  text-align: start;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-left: 34px;
+}
+
 .modal-content ul {
   list-style: none;
   padding: 0;
@@ -404,11 +409,27 @@ tbody {
   border-bottom: 1px solid;
 }
 
+.model-btn {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+
+#continue-shopping {
+  border-radius: none;
+  color: #364a63;
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+}
+
 #close-modal {
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
-  background: #dc3545;
+
+  background: #6576ff;
   color: white;
   cursor: pointer;
 }
@@ -422,7 +443,7 @@ tbody {
 #cart-productTitle {
   width: 200px;
 }
-/* Responsive Design: Media Queries */
+
 @media (max-width: 768px) {
   .product-image img {
     width: 100%;
@@ -431,10 +452,12 @@ tbody {
 
   .product-details {
     max-width: 100%;
+    padding-bottom: 50px;
   }
 
   #checkout-btn {
-    bottom: 10px; /* Slightly closer to the bottom */
+    bottom: 5px;
+    padding-top: 100px;
   }
 }
 
