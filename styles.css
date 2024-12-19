@@ -93,6 +93,7 @@ h3 {
 .product-details p {
   margin-bottom: 20px;
   color: #8091a7;
+  width: 630px;
 }
 
 .pricing {
@@ -363,7 +364,6 @@ tbody {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  gap: 4px;
 }
 #checkout-btn span {
   background-color: white;
